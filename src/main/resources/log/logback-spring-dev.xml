@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="1 seconds">
+
+	<contextName>springboot_logback</contextName>
+
+	<!-- 日志存储路径 -->
+	<property name="log.path" value="E:\\logback" />
+
+	<!-- appender格式化日志输出节点   控制台  和 文件-->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 连接  ERROR级别以下的日志 
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		-->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36}
+				- %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>E:\\logback\\log.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 每天一归档 -->
+			<fileNamePattern>mylog-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+			<!-- 单个日志文件最多 100MB, 60天的日志周期，最大不能超过20GB -->
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>60</maxHistory>
+			<totalSizeCap>20GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+
+	<root level="INFO">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+	<!-- 指定包级别日志 可选 -->
+	<logger name="org.freeuse.spbt" level="DEBUG" />
+
+</configuration>
