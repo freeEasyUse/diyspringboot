@@ -26,7 +26,7 @@
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 			<!-- 每天一归档 -->
-			<fileNamePattern>mylog-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+			<fileNamePattern>E:\\logback\\mylog-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
 			<!-- 单个日志文件最多 100MB, 60天的日志周期，最大不能超过20GB -->
 			<maxFileSize>100MB</maxFileSize>
 			<maxHistory>60</maxHistory>
