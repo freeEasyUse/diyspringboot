@@ -12,7 +12,7 @@ public class HelloController {
 	private Logger logger = LoggerFactory.getLogger(HelloController.class);
 	
 	
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	public String index(){
 		logger.info("我是info级别的日志：开始请求/路径");
 		logger.debug("我是debug级别的日志：开始请求/路径");

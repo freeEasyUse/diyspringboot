@@ -20,7 +20,7 @@ public class HelloControllerTest extends BaseTest {
 	
 	@Test
 	public void indexTest() throws Exception{
-		mockMvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
+		mockMvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
 	}
