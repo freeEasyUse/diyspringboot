@@ -1,4 +1,4 @@
-package org.freeuse.spbt.controller.webCommon;
+package org.freeuse.spbt.controller.mvcconfig;
 
 import javax.servlet.http.HttpServletRequest;
 

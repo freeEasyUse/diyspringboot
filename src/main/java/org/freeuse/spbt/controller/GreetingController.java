@@ -13,4 +13,11 @@ public class GreetingController {
         model.addAttribute("name", name);
         return "greeting";
     }
+    
+    
+    @RequestMapping("/websocket")
+    public String websocket(){
+    	return "websocket";
+    }
+    
 }
