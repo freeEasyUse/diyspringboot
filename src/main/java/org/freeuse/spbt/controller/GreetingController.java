@@ -20,4 +20,9 @@ public class GreetingController {
     	return "websocket";
     }
     
+    @RequestMapping("websockjs")
+    public String websockjs(){
+    	return "websocket_sockjs";
+    }
+    
 }

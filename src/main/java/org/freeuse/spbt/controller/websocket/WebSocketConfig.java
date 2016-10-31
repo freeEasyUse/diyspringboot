@@ -50,6 +50,11 @@ public class WebSocketConfig implements WebSocketConfigurer {
 		//允许服务段 socketjs
 		//socketHandlerRegistration.withSockJS();
 		socketHandlerRegistration.setAllowedOrigins("*");
+		
+		WebSocketHandlerRegistration socketHandlerRegistration_withsockjs =  registry.addHandler(myTextWebSocketHandler, "/websockTest_sockjs");
+		socketHandlerRegistration_withsockjs.withSockJS();
+		socketHandlerRegistration_withsockjs.setAllowedOrigins("*");
+		
 	}
 
 }

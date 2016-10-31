@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>websocket 测试</title>
+</head>
+<body>
+	<button id="connect" onclick="connect()">连接</button>
+	<button id="disconnect" onclick="disconnect()">断开</button>
+	<br/>
+	<input id="message" value="send message" />
+	<button onclick="sendContent()">发送消息</button>
+	<div id="response"></div>
+</body>
+
+<script type="text/javascript" src="/lib/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="/lib/sockjs-0.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var sock = null;
+		//连接
+		connect = function(){
+			sock = new SockJS('http://localhost:8080/websockTest_sockjs');
+
+		//设置事件
+		sock.onopen = function() {
+			console.log('open');
+		};
+		sock.onmessage = function(e) {
+			console.log('message', e.data);
+			$("#response").append(e.data+"<br/>");
+			
+			
+			
+		};
+		sock.onclose = function() {
+			console.log('close');
+		};
+
+		}
+
+		//断开
+		disconnect = function(){
+			sock.close();
+		}
+		
+		
+		//发送
+		sendContent = function(){
+			sock.send($("#message").val());
+		}
+	});
+</script>
+
+
+</html>
