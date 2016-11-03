@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface PersonRepository extends JpaRepository<Person,Long>{
 
-	List<Person> findByAddress(String name);
+	List<Person> findByAddress(String address);
 	
 	
 	Person findByNameAndAddress(String name,String address);
@@ -19,6 +19,6 @@ public interface PersonRepository extends JpaRepository<Person,Long>{
 	@Query("select p from Person p where p.name = :name and p.address = :address")
 	Person withNameAndAddressQuery(@Param("name")String name,@Param("address")String address);
 	
-	Person withNameAndAddressNamedQuery(String name,String address);
+	//Person withNameAndAddressNameQuery(String name,String address);
 	
 }
