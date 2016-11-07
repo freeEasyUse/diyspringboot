@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.freeuse.spbt.mybatis.mapper.UserInfoMapper">
+
+	<select id="findGroupByUserType" resultType="java.util.Map">
+		select COUNT(1) as "count",usertype as "userType" from user_info GROUP BY usertype
+	</select>
+
+
+</mapper>
