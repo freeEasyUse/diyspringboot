@@ -33,7 +33,7 @@ public class PersonDaoTest extends BaseTest {
 	 * @throws ExecutionException 
 	 * @throws InterruptedException 
 	 */
-	@Test
+/*	@Test
 	public void asyncFindByAddressTest() throws Exception{
 		System.out.println("异步查询结束");
 		taskExecutor.execute(new Runnable() {
@@ -56,7 +56,7 @@ public class PersonDaoTest extends BaseTest {
 		});
 		
 		System.out.println("查询结束");
-		Thread.sleep(1000000000);
-	}
+		Thread.yield();
+	}*/
 	
 }

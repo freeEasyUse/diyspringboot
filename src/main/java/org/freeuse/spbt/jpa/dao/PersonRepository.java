@@ -18,15 +18,16 @@ public interface PersonRepository extends JpaRepository<Person,Long>{
 	 * @param address
 	 * @return
 	 */
-	@Async
-	Future<List<Person>> findByAddress(String address);
+/*	@Async
+	Future<List<Person>> findByAddress(String address);*/
 	
+	List<Person> findByAddress(String address);
 	
 	Person findByNameAndAddress(String name,String address);
 	
 	@Query("select p from Person p where p.name = :name and p.address = :address")
 	Person withNameAndAddressQuery(@Param("name")String name,@Param("address")String address);
 	
-	//Person withNameAndAddressNameQuery(String name,String address);
+	Person withNameAndAddressNameQuery(String name,String address);
 	
 }
