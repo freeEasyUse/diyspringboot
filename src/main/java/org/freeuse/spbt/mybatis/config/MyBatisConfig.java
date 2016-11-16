@@ -71,6 +71,11 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 
+	
+	/**
+	 * jdbc 事务管理
+	 */
+	@Bean(name="transactionManager",value="transactionManager")
 	@Override
 	public PlatformTransactionManager annotationDrivenTransactionManager() {
 		return new DataSourceTransactionManager(dataSource);

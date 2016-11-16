@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.freeuse.spbt.jpa.dao.PersonRepository;
 import org.freeuse.spbt.jpa.entity.Person;
+import org.freeuse.spbt.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,6 +20,9 @@ public class PersonController {
 	@Autowired
 	private PersonRepository personRepository;
 	
+	
+	@Autowired
+	private PersonService personService;
 	
 	/**
 	 * 保存 
@@ -85,25 +89,23 @@ public class PersonController {
 	 * 测试分页
 	 * @return
 	 */
-	@RequestMapping("/page"
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ ""
-			+ "")
+	@RequestMapping("/page")
 	public Page<Person> page(){
 		Page<Person> peoplePage = personRepository.findAll(new PageRequest(1, 2));
 		return peoplePage;
 	}
+	
+	
+	
+	@RequestMapping("/rollback")
+	public Person rollback(Person person){
+		return personService.savePersonWithRollBack(person);
+	}
+	
+	@RequestMapping("/norollback")
+	public Person norollback(Person person){
+		return personService.savePersonWithoutRollBack(person);
+	}
+	
 	
 }
