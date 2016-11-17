@@ -15,7 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 //jpa 扫描的包
 //@EnableJpaRepositories(basePackages = "org.freeuse.spbt.jpa")
-//@EnableMongoRepositories  mongo扫描的包
+//@EnableMongoRepositories  // mongo扫描的包
 public class DaoConfig {
 
 	
