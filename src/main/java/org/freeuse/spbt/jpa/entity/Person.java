@@ -1,5 +1,7 @@
 package org.freeuse.spbt.jpa.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(name="Person.withNameAndAddressNameQuery",query="select p from Person p where p.name = ?1 and address = ?2")
-public class Person {
+public class Person implements Serializable {
 
 	@Id
 	@GeneratedValue
