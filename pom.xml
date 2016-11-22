@@ -11,7 +11,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.1.RELEASE</version>
+		<version>1.4.2.RELEASE</version>
 	</parent>
 
 
@@ -144,11 +144,11 @@
 		</dependency>
 
 
-		<!--  spring security -->
-		<dependency>
+		<!-- spring security -->
+<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -171,6 +171,14 @@
 			<id>spring-releases</id>
 			<url>https://repo.spring.io/libs-release</url>
 		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/libs-snapshot</url>
+		</repository>
+		
+		
+		
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
