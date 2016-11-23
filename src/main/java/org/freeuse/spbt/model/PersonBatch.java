@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 
 public class PersonBatch {
 
-	@Size(max=4,min=2)
+	//@Size(max=4,min=2)
 	private String name;
 	
 	private int age;
